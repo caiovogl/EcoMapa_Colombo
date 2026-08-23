@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoMapa Colombo - Descarte Consciente</title>
+    
+    <!-- Leaflet CSS (Mapa) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="/estilos/style.css">
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header class="main-header">
+    <div class="header-container">
+        <!-- Logo do Projeto -->
+        <a href="#" class="logo">
+            <span class="logo-icon">🌱</span>
+            <h1>EcoMapa <span>Colombo</span></h1>
+        </a>
+
+        <!-- Botão Hambúrguer para Mobile -->
+        <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu de navegação">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Links de Navegação -->
+        <nav class="main-nav" id="main-nav">
+            <ul class="nav-list">
+                <li><a href="#" class="nav-link active">🗺️ Mapa de Ecopontos</a></li>
+                <li><a href="/paginas/papatreco.html" class="nav-link">🛋️ Papa-Treco</a></li>
+                <!-- Futuras páginas podem ser adicionadas aqui facilmente -->
+                <!-- <li><a href="dicas.html" class="nav-link">♻️ Como Separar</a></li> -->
+                <!-- <li><a href="sobre.html" class="nav-link">ℹ️ Sobre o Projeto</a></li> -->
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <!-- Barra de Filtros Rápidos por Categoria -->
+    <section class="filter-section">
+        <div class="filter-container">
+            <button class="filter-chip active" data-type="todos">
+                <span>📍</span> Todos
+            </button>
+            <button class="filter-chip" data-type="eletronicos">
+                <span>💻</span> E-Lixo / Eletrônicos
+            </button>
+            <button class="filter-chip" data-type="reciclaveis">
+                <span>♻️</span> Recicláveis Gerais
+            </button>
+            <!--<button class="filter-chip" data-type="oleo">
+                <span>🛢️</span> Óleo de Cozinha
+            </button>-->
+            <button class="filter-chip" data-type="entulho">
+                <span>🧱</span> Entulho / Galhos
+            </button>
+            <button class="filter-chip" data-type="volumosos">
+                <span>🛋️</span> Papa-Treco / Móveis
+            </button>
+        </div>
+    </section>
+
+    <!-- Container Principal com Mapa e Lista Lateral -->
+    <main class="map-layout">
+        <!-- Mapa Interativo -->
+        <section id="map" class="map-container"></section>
+
+        <!-- Painel / Lista de Pontos -->
+        <aside class="places-sidebar">
+            <div class="sidebar-header">
+                <h2>Ecopontos Disponíveis</h2>
+                <button id="btn-geolocalizacao" class="btn-locate">
+                    🎯 Mais Próximo de Mim
+                </button>
+            </div>
+            
+            <div id="places-list" class="places-list">
+                <!-- Card de Exemplo 1 -->
+                <article class="place-card">
+                    <div class="place-header">
+                        <h3>Ecoponto Roça Grande</h3>
+                        <span class="badge open">Aberto</span>
+                    </div>
+                    <p class="place-address">📍 Rodovia da Uva, Colombo - PR</p>
+                    <div class="tags-container">
+                        <span class="tag">💻 E-Lixo</span>
+                        <span class="tag">♻️ Recicláveis</span>
+                        <span class="tag">🛢️ Óleo</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn-route">🗺️ Como Chegar</button>
+                    </div>
+                </article>
+
+                <!-- Card de Exemplo 2 -->
+                <article class="place-card">
+                    <div class="place-header">
+                        <h3>Central Papa-Treco Colombo</h3>
+                        <span class="badge info">Agendamento</span>
+                    </div>
+                    <p class="place-address">📍 Atendimento em domicílio</p>
+                    <div class="tags-container">
+                        <span class="tag">🛋️ Móveis</span>
+                        <span class="tag">🧱 Grandes Volumes</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn-route">📞 Solicitar Coleta</button>
+                    </div>
+                </article>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="main-footer">
+        <p>Projeto de Extensão Universitária • Engenharia de Software • Economia Sustentável (ODS 12)</p>
+        <p>Sua localização é utilizada exclusivamente em tempo real no navegador para calcular o ecoponto mais próximo, não sendo armazenada em nenhum servidor.</p>
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

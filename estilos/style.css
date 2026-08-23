@@ -1,0 +1,375 @@
+:root {
+    --primary: #27ae60;
+    --primary-dark: #1e8449;
+    --secondary: #2c3e50;
+    --bg-light: #f8faf9;
+    --card-bg: #ffffff;
+    --text-main: #2d3436;
+    --text-muted: #636e72;
+    --border-color: #e2e8f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+}
+
+/* 1. Travar a janela inteira em 100vh exatos */
+html, body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Trava o scroll da página inteira */
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Global Responsivo */
+.main-header {
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.75rem 1.5rem;
+    position: relative;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.logo h1 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--secondary);
+}
+
+.logo h1 span {
+    color: var(--primary);
+}
+
+/* Navegação Desktop */
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 0.5rem 0.85rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.nav-link:hover {
+    background-color: var(--bg-light);
+    color: var(--primary);
+}
+
+.nav-link.active {
+    background-color: #eafaf1;
+    color: var(--primary-dark);
+}
+
+/* Botão Hambúrguer (Oculto no Desktop) */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 28px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.nav-toggle span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--secondary);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Filtros por Categoria (Scroll horizontal no mobile) */
+.filter-section {
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.75rem 1rem;
+}
+
+.filter-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.filter-container::-webkit-scrollbar {
+    display: none;
+}
+
+.filter-chip {
+    background: var(--bg-light);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 0.4rem 0.9rem;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-main);
+    cursor: pointer;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    transition: all 0.2s ease;
+}
+
+.filter-chip.active,
+.filter-chip:hover {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+}
+
+/* Altura travada na viewport para o layout principal */
+.map-layout {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    min-height: 0; /* Permite que os containers internos usem scroll */
+}
+
+.map-container {
+    height: 45vh;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Sidebar com scroll independente */
+.places-sidebar {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto; /* Habilita a rolagem vertical */
+    max-height: 100%;
+    background: var(--bg-light);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.sidebar-header h2 {
+    font-size: 1.1rem;
+    color: var(--secondary);
+}
+
+.btn-locate {
+    background: var(--secondary);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.45rem 0.8rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn-locate:hover {
+    background: #1a252f;
+}
+
+/* Lista de cards */
+.places-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+    overflow-y: auto; /* Garante que a lista role suavemente */
+}
+
+.place-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.place-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.place-header h3 {
+    font-size: 1rem;
+    color: var(--secondary);
+}
+
+.badge {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+.badge.open {
+    background: #d4edda;
+    color: #155724;
+}
+
+.badge.info {
+    background: #cce5ff;
+    color: #004085;
+}
+
+.place-address {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
+.tag {
+    background: #eef2f5;
+    color: var(--secondary);
+    font-size: 0.72rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+}
+
+.card-actions {
+    margin-top: 0.25rem;
+}
+
+.btn-route {
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn-route:hover {
+    background: var(--primary-dark);
+}
+
+/* Footer */
+.main-footer {
+    background: var(--card-bg);
+    border-top: 1px solid var(--border-color);
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* Responsividade Desktop */
+@media (min-width: 768px) {
+   .map-layout {
+        flex-direction: row;
+        height: calc(100vh - 160px); /* Trava a altura exata descontando header, filtros e footer */
+        overflow: hidden; /* Impede que a tela inteira role */
+    }
+
+    .map-container {
+        height: 100%;
+        flex: 2;
+        min-height: 0;
+    }
+
+    .places-sidebar {
+        flex: 1;
+        max-width: 420px;
+        height: 100%;
+        overflow-y: auto; /* Apenas este painel ganha barra de rolagem */
+        border-left: 1px solid var(--border-color);
+    }
+}
+
+/* Menu Mobile Dropdown */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+    }
+
+    .main-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--card-bg);
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        display: none;
+        padding: 0.75rem 1rem;
+    }
+
+    .main-nav.open {
+        display: block;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.25rem;
+    }
+
+    .nav-link {
+        padding: 0.75rem 1rem;
+    }
+}
