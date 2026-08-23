@@ -105,7 +105,7 @@ function renderizarPontos(lista) {
         const isPapaTreco = ponto.tipos.includes('volumosos') || ponto.nome.includes('Papa-Treco');
 
         const botaoAcao = isPapaTreco
-            ? `<a href="/paginas/papatreco.html" class="btn-route" style="background-color: #2980b9; text-align: center; text-decoration: none; display: block;">🛋️ Ver Como Solicitar</a>`
+            ? `<a href="paginas/papatreco.html" class="btn-route" style="background-color: #2980b9; text-align: center; text-decoration: none; display: block;">🛋️ Ver Como Solicitar</a>`
             : `<button class="btn-route" onclick="abrirRota(${ponto.lat}, ${ponto.lng})">🗺️ Como Chegar (GPS)</button>`;
         
         const distTexto = ponto.distancia !== undefined ? ` • <strong>${ponto.distancia.toFixed(2)} km</strong>` : '';
@@ -131,7 +131,7 @@ function renderizarPontos(lista) {
             ? `<strong>${ponto.nome}</strong><br>
             ${ponto.endereco}<br>
             <small>Serviço sob agendamento</small><br><br>
-            <a href="/paginas/papatreco.html" style="color: #2980b9; font-weight: bold;">Ver instruções de coleta →</a>`
+            <a href="paginas/papatreco.html" style="color: #2980b9; font-weight: bold;">Ver instruções de coleta →</a>`
             : `<strong>${ponto.nome}</strong><br>
             ${ponto.endereco}<br>
             <small>Status: ${ponto.status}</small>`;
