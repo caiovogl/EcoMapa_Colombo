@@ -33,6 +33,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    overflow-y: auto;
 }
 
 /* Header Global Responsivo */
@@ -173,11 +174,11 @@ body {
     max-width: 1400px;
     width: 100%;
     margin: 0 auto;
-    min-height: 0; /* Permite que os containers internos usem scroll */
+    min-height: 80vh; 
 }
 
 .map-container {
-    height: 45vh;
+    height: 40vh;
     width: 100%;
     z-index: 1;
 }
@@ -322,7 +323,8 @@ body {
 @media (min-width: 768px) {
    .map-layout {
         flex-direction: row;
-        height: calc(100vh - 160px); /* Trava a altura exata descontando header, filtros e footer */
+        height: calc(100vh - 150px);
+        min-height: auto;
         overflow: hidden; /* Impede que a tela inteira role */
     }
 
