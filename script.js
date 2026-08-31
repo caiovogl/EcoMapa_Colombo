@@ -160,6 +160,9 @@ document.getElementById('btn-geolocalizacao').addEventListener('click', () => {
         return;
     }
 
+    var button = document.getElementById('btn-geolocalizacao');
+    button.textContent = "Procurando...";
+
     navigator.geolocation.getCurrentPosition(
         (pos) => {
             const userLat = pos.coords.latitude;
@@ -185,8 +188,10 @@ document.getElementById('btn-geolocalizacao').addEventListener('click', () => {
             }).sort((a, b) => a.distancia - b.distancia);
 
             renderizarPontos(pontosOrdenados);
+            button.textContent = "📍 Encontrar Ecoponto Mais Próximo";
         },
         () => {
+            button.textContent = "📍 Encontrar Ecoponto Mais Próximo";
             alert("Não foi possível obter sua localização. Verifique as permissões do navegador.");
         }
     );
