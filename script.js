@@ -13,7 +13,7 @@ const ecopontos = [
     {
         id: 2,
         nome: "Ecoponto Ana Terra",
-        endereco: "Rua Antônio Francisco Scrok, Colombo - PR",
+        endereco: "Escola Municipal Pedro Viriato Parigot de Souza – CAIC, Colombo - PR",
         lat: -25.3485802,
         lng: -49.1886199,
         tipos: ["eletronicos", "reciclaveis"],
@@ -33,7 +33,7 @@ const ecopontos = [
     {
         id: 4,
         nome: "Ecoponto Santa Terezinha",
-        endereco: "Rua Maria Francelina da Silva, Colombo - PR",
+        endereco: "Escola Municipal Parque Santa Terezinha, Colombo - PR",
         lat: -25.3555186,
         lng: -49.1753908,
         tipos: ["eletronicos", "reciclaveis"],
@@ -43,9 +43,9 @@ const ecopontos = [
     {
         id: 5,
         nome: "Ecoponto Centro de Colombo",
-        endereco: "Rua Zacaria de Paula Xavier, Colombo - PR",
-        lat: -25.2918394,
-        lng: -49.2293218,
+        endereco: "Colégio Abraham Lincoln, Colombo - PR",
+        lat: -25.2913019,
+        lng: -49.2269239,
         tipos: ["eletronicos", "reciclaveis"],
         status: "Aberto",
         telefone: "(41) 98872-9734"
