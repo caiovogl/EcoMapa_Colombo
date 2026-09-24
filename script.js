@@ -44,8 +44,8 @@ const ecopontos = [
         id: 5,
         nome: "Ecoponto Centro de Colombo",
         endereco: "Colégio Abraham Lincoln, Colombo - PR",
-        lat: -25.292043014842356,
-        lng: -49.22810570162355,
+        lat: -25.29198016307982,
+        lng: -49.2269833583988,
         tipos: ["eletronicos", "reciclaveis"],
         status: "Aberto",
         telefone: "(41) 98872-9734"
